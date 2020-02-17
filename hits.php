@@ -671,12 +671,12 @@ thead th {
             <?php    foreach ($groupmembers as $key => $value) { ?>
                 <option value="<?php echo $key; ?>"><?php echo $value["name"]; ?></option>
 <?php
-}
+                }
 ?>
             </select>
         </div>
 <?php
-}
+    }
 ?>
 <center>
 <H2><?php  echo   get_string('hits_distribution', 'block_analytics_graphs');?></H2>
@@ -1762,7 +1762,7 @@ thead th {
                             " - " + coursename;
                         $("#studentswithnoaccess").append(createEmailForm(title , studentswithnoaccessgroup, courseid, 'hits.php',
                             <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' .
-                            	block_analytics_graphs_get_course_name($course)); ?>));
+                                block_analytics_graphs_get_course_name($course)); ?>));
                     }
                 }
             });

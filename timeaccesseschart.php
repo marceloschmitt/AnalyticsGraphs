@@ -38,7 +38,7 @@ $logstorelife = block_analytics_graphs_get_logstore_loglife();
 $coursedayssincestart = block_analytics_graphs_get_course_days_since_startdate($course);
 if ($logstorelife === null || $logstorelife == 0) {
     // 0, false and NULL are threated as null in case logstore setting not found and 0 is "no removal" logs.
-    $maximumdays = $coursedayssincestart; // The chart should not break with value more than available
+    $maximumdays = $coursedayssincestart; // The chart should not break with value more than available.
 } else if ($logstorelife >= $coursedayssincestart) {
     $maximumdays = $coursedayssincestart;
 } else {
@@ -178,10 +178,10 @@ $daysaccess = json_encode($daysaccess);
 </head>
 
 <div style="width: 300px; min-width: 325px; height: 65px;left:10px; top:5px; border-radius: 0px;padding: 5px;border: 2px solid
-	silver;text-align: center;">
+    silver;text-align: center;">
     <?php echo get_string('timeaccesschart_daysforstatistics', 'block_analytics_graphs'); ?>
     <input style="width: 50px;" id = "days" type="number" name="days" min="1" max="<?php echo $maximumdays; ?>" value="<?php echo
-    	$days ?>">
+        $days ?>">
     <br>
     <button style="width: 225px;" id="apply"><?php echo get_string('timeaccesschart_button_apply', 'block_analytics_graphs');
     ?></button>
@@ -227,10 +227,10 @@ $daysaccess = json_encode($daysaccess);
     $('#apply').click(function() {
         if (maximumDays < $('#days').val()) {
             window.location.href = '<?php echo $CFG->wwwroot . "/blocks/analytics_graphs/timeaccesseschart.php?id=" . $course .
-            	"&days="; ?>' + maximumDays;
+                "&days="; ?>' + maximumDays;
         } else {
             window.location.href = '<?php echo $CFG->wwwroot . "/blocks/analytics_graphs/timeaccesseschart.php?id=" . $course .
-            	"&days="; ?>' + $('#days').val();
+                "&days="; ?>' + $('#days').val();
         }
         return false;
     });
