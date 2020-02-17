@@ -1736,7 +1736,7 @@ thead th {
                 $("#studentswithnoaccess").children().remove();
                 var title = <?php echo json_encode(get_string('no_access', 'block_analytics_graphs'));?> + " - " + coursename;
                 $("#studentswithnoaccess").append(createEmailForm(title , studentswithnoaccessgroup, courseid, 'hits.php',
-                    <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' . 
+                    <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' .
                         block_analytics_graphs_get_course_name($course)); ?>));
             }
         }else{

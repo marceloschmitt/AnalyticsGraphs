@@ -67,7 +67,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
             echo "<h4 style='margin-bottom: 3px'>" . get_string('activities', 'block_analytics_graphs') . ":</h4>";
             if (in_array("activequiz", $availablemodules)) {
                 // From here used to check if specific module is available, otherwise it is not displayed.
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_activequiz",     
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_activequiz",
                     "mod_activequiz", array(
                     'width' => 24,
                     'height' => 24,
@@ -77,7 +77,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
             }
             if (in_array("assign", $availablemodules)) {
                 // From here used to check if specific module is available, otherwise it is not displayed.
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_assign", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_assign",
                     "mod_assign", array(
                     'width' => 24,
                     'height' => 24,
@@ -87,7 +87,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
             }
             if (in_array("attendance", $availablemodules)) {
                 // From here used to check if specific module is available, otherwise it is not displayed.
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_attendance", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_attendance",
                     "mod_attendance", array(
                     'width' => 24,
                     'height' => 24,
@@ -96,7 +96,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("bigbluebuttonbn", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_bigbluebuttonbn", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_bigbluebuttonbn",
                     "mod_bigbluebuttonbn", array(
                     'width' => 24,
                     'height' => 24,
@@ -249,7 +249,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 )), "mod" . $num, "groupselect", get_string('typename_groupselect', 'block_analytics_graphs'));
                 $num++;
             }
-            
+
             if (in_array("turnitintooltwo", $availablemodules)) {
                 echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_turnitintooltwo",
                     "mod_turnitintooltwo", array(
@@ -259,7 +259,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 )), "mod" . $num, "turnitintooltwo", get_string('typename_turnitintooltwo', 'block_analytics_graphs'));
                 $num++;
             }
-            
+
             if (in_array("hotpot", $availablemodules)) {
                 echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_hotpot",
                     "mod_hotpot", array(
@@ -479,21 +479,21 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 )), "mod" . $num, "url", get_string('typename_url', 'block_analytics_graphs'));
                 $num++;
             }
-            
+
             echo "<input type=\"hidden\" name=\"id\" value=\"$course\">";
-            
+
             echo "<h4 style='margin-bottom: 3px'>" . get_string('options', 'block_analytics_graphs') . ":</h4>";
-            
-            echo get_string('startfrom', 'block_analytics_graphs') . ": <input type=\"date\" name=\"from\" 
+
+            echo get_string('startfrom', 'block_analytics_graphs') . ": <input type=\"date\" name=\"from\"
                 value=\"$startdate\"><br>";
-            
+
             echo "<input type=\"checkbox\" name=\"hidden\" value=\"true\">" . get_string('displayhidden', 'block_analytics_graphs');
             ?>
     </div>
     <?php
     echo "<input type='button' value='" . get_string('btn_select_all', 'block_analytics_graphs') . "' 
         onclick='checkUncheck(true);'>";
-    echo "<input type='button' value='" . get_string('btn_deselect_all', 'block_analytics_graphs') . "' 
+    echo "<input type='button' value='" . get_string('btn_deselect_all', 'block_analytics_graphs') . "'
         onclick='checkUncheck(false);'>";
     echo "<input type='submit' value='" . get_string('btn_submit', 'block_analytics_graphs') . "''>";
     ?>
