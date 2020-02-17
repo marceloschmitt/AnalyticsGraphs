@@ -54,7 +54,7 @@ foreach ($_GET as $querystringvariable => $value) {
     }
     $temp = $value;
     if (!in_array($temp, $requestedtypes)) { // Prevent duplicates.
-        switch ($temp) { //Not very necessary, left for readability and a little security.
+        switch ($temp) { // Not very necessary, left for readability and a little security.
             case "activequiz" :
                 array_push($requestedtypes, $temp);
                 break;
@@ -205,9 +205,7 @@ if (count($requestedtypes) < 1) {
     exit;
 }
 
-$result = block_analytics_graphs_get_resource_url_access($course, $students, $requestedtypes, $startdate, $hidden);
-
-// echo var_dump($result);
+$result = block_analytics_graphs_get_resource_url_access($course, $students, $requestedtypes, $startdate, $hidden);	
 
 $numberofresources = count($result);
 if ($numberofresources == 0) {
@@ -723,7 +721,7 @@ foreach ($groupmembers as $key => $value) {
             </select>
         </div>
 <?php
-        }
+}
 ?>
         <div id="container" style="min-width: 800px; height:<?php echo ($counter + 1) * 50 + 180;?>; margin: 0 auto"></div>
         <script>

@@ -22,6 +22,11 @@ $days = required_param('days', PARAM_INT);
 global $DB;
 global $CFG;
 
+// Control access.
+require_login($course);
+$this->context = context_course::instance($course);
+require_capability('block/analytics_graphs:viewpages', $this->context);
+
 $students = block_analytics_graphs_get_students($course);
 $numberofstudents = count($students);
 if ($numberofstudents == 0) {

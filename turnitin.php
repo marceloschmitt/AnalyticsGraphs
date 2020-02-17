@@ -21,6 +21,11 @@ require('lib.php');
 
 $course = required_param('id', PARAM_INT);
 
+// Control access.
+require_login($course);
+$this->context = context_course::instance($course);
+require_capability('block/analytics_graphs:viewpages', $this->context);
+
 $title = get_string('submissions_turnitin', 'block_analytics_graphs');
 $submissionsgraph = new graph_submission($course, $title);
 
