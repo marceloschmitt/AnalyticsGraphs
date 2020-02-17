@@ -16,7 +16,7 @@
 
 require('../../config.php');
 require('lib.php');
-// require('javascriptfunctions.php');
+
 $course = required_param('id', PARAM_INT);
 global $DB;
 /* Access control */
@@ -64,10 +64,9 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
             /* Checking and displaying available choices based on installed modules and specific order and formatting,
             if order does not matter, then can be exchanged with a simple for loop */
             $num = 1;
-            // get_string('no_types_requested', 'block_analytics_graphs')
             echo "<h4 style='margin-bottom: 3px'>" . get_string('activities', 'block_analytics_graphs') . ":</h4>";
             if (in_array("activequiz", $availablemodules)) {
-                // from here used to check if specific module is available, otherwise it is not displayed
+                // From here used to check if specific module is available, otherwise it is not displayed.
                 echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_activequiz",     
                     "mod_activequiz", array(
                     'width' => 24,
@@ -77,7 +76,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("assign", $availablemodules)) {
-                // from here used to check if specific module is available, otherwise it is not displayed
+                // From here used to check if specific module is available, otherwise it is not displayed.
                 echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_assign", 
                     "mod_assign", array(
                     'width' => 24,
@@ -87,7 +86,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("attendance", $availablemodules)) {
-                // from here used to check if specific module is available, otherwise it is not displayed
+                // From here used to check if specific module is available, otherwise it is not displayed.
                 echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_attendance", 
                     "mod_attendance", array(
                     'width' => 24,
@@ -106,8 +105,8 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("booking", $availablemodules)) {
-                // from here used to check if specific module is available, otherwise it is not displayed
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_booking", 
+                // From here used to check if specific module is available, otherwise it is not displayed.
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_booking",
                     "mod_booking", array(
                     'width' => 24,
                     'height' => 24,
@@ -116,7 +115,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("certificate", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_certificate", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_certificate",
                     "mod_certificate", array(
                     'width' => 24,
                     'height' => 24,
@@ -125,7 +124,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("chat", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_chat", "mod_chat", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_chat", "mod_chat",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -134,7 +133,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("checklist", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_checklist", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_checklist",
                     "mod_checklist", array(
                     'width' => 24,
                     'height' => 24,
@@ -143,7 +142,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("choice", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_choice", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_choice",
                     "mod_choice", array(
                     'width' => 24,
                     'height' => 24,
@@ -152,7 +151,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("icontent", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_icontent", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_icontent",
                     "mod_icontent", array(
                     'width' => 24,
                     'height' => 24,
@@ -161,7 +160,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("customcert", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_customcert", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_customcert",
                     "mod_customcert", array(
                     'width' => 24,
                     'height' => 24,
@@ -170,7 +169,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("data", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_data", "mod_data", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_data", "mod_data",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -179,7 +178,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("dataform", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_dataform", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_dataform",
                     "mod_dataform", array(
                     'width' => 24,
                     'height' => 24,
@@ -188,7 +187,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("lti", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_lti", "mod_lti", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_lti", "mod_lti",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -197,7 +196,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("feedback", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_feedback", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_feedback",
                     "mod_feedback", array(
                     'width' => 24,
                     'height' => 24,
@@ -206,7 +205,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("forum", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_forum", "mod_forum", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_forum", "mod_forum",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -215,7 +214,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("game", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_game", "mod_game", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_game", "mod_game",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -224,7 +223,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("glossary", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_glossary",   
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_glossary",  
                     "mod_glossary", array(
                     'width' => 24,
                     'height' => 24,
@@ -233,7 +232,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("choicegroup", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_choicegroup", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_choicegroup",
                     "mod_choicegroup", array(
                     'width' => 24,
                     'height' => 24,
@@ -242,7 +241,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("groupselect", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_groupselect", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_groupselect",
                     "mod_groupselect", array(
                     'width' => 24,
                     'height' => 24,
@@ -252,7 +251,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
             }
             
             if (in_array("turnitintooltwo", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_turnitintooltwo", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_turnitintooltwo",
                     "mod_turnitintooltwo", array(
                     'width' => 24,
                     'height' => 24,
@@ -262,7 +261,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
             }
             
             if (in_array("hotpot", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_hotpot", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_hotpot",
                     "mod_hotpot", array(
                     'width' => 24,
                     'height' => 24,
@@ -271,7 +270,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("hvp", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_hvp", "mod_hvp", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_hvp", "mod_hvp",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -280,7 +279,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("lesson", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_lesson", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_lesson",
                     "mod_lesson", array(
                     'width' => 24,
                     'height' => 24,
@@ -289,7 +288,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("openmeetings", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_openmeetings", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_openmeetings",
                     "mod_openmeetings", array(
                     'width' => 24,
                     'height' => 24,
@@ -298,7 +297,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("questionnaire", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_questionnaire", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_questionnaire",
                     "mod_questionnaire", array(
                     'width' => 24,
                     'height' => 24,
@@ -307,7 +306,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("quiz", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_quiz", "mod_quiz", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_quiz", "mod_quiz",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -316,7 +315,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("quizgame", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_quizgame", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_quizgame",
                     "mod_quizgame", array(
                     'width' => 24,
                     'height' => 24,
@@ -325,7 +324,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("scheduler", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_scheduler", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_scheduler",
                     "mod_scheduler", array(
                     'width' => 24,
                     'height' => 24,
@@ -334,7 +333,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("scorm", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_scorm", "mod_scorm", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_scorm", "mod_scorm",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -343,7 +342,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("subcourse", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_subcourse", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_subcourse",
                     "mod_subcourse", array(
                     'width' => 24,
                     'height' => 24,
@@ -352,7 +351,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("survey", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_survey", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_survey",
                     "mod_survey", array(
                     'width' => 24,
                     'height' => 24,
@@ -361,7 +360,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("vpl", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_vpl", "mod_vpl", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_vpl", "mod_vpl",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -370,7 +369,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("wiki", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_wiki", "mod_wiki", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_wiki", "mod_wiki",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -379,7 +378,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("workshop", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_workshop", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_workshop",
                     "mod_workshop", array(
                     'width' => 24,
                     'height' => 24,
@@ -391,7 +390,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
             echo "<h4 style='margin-bottom: 3px'>" . get_string('resources', 'block_analytics_graphs') . ":</h4>";
 
             if (in_array("book", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_book", "mod_book", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_book", "mod_book",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -400,7 +399,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("resource", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_resource", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_resource",
                     "mod_resource", array(
                     'width' => 24,
                     'height' => 24,
@@ -409,7 +408,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("folder", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_folder", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_folder",
                     "mod_folder", array(
                     'width' => 24,
                     'height' => 24,
@@ -418,7 +417,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("imscp", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_imscp", "mod_imscp", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_imscp", "mod_imscp",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -427,7 +426,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("label", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_label", "mod_label", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_label", "mod_label",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -436,7 +435,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("lightboxgallery", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_lightboxgallery", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_lightboxgallery",
                     "mod_lightboxgallery", array(
                     'width' => 24,
                     'height' => 24,
@@ -445,7 +444,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("page", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_page", "mod_page", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_page", "mod_page",
                     array(
                     'width' => 24,
                     'height' => 24,
@@ -454,7 +453,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("poster", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_poster", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_poster",
                     "mod_poster", array(
                     'width' => 24,
                     'height' => 24,
@@ -463,7 +462,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("recordingsbn", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_recordingsbn", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_recordingsbn",
                     "mod_recordingsbn", array(
                     'width' => 24,
                     'height' => 24,
@@ -472,7 +471,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("url", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_url", "mod_url", 
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_url", "mod_url",
                     array(
                     'width' => 24,
                     'height' => 24,

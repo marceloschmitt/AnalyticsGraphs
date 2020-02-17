@@ -53,8 +53,8 @@ foreach ($_GET as $querystringvariable => $value) {
         continue;
     }
     $temp = $value;
-    if (!in_array($temp, $requestedtypes)) { // prevent duplicates
-        switch ($temp) { // not very necessary, left for readability and a little security
+    if (!in_array($temp, $requestedtypes)) { // Prevent duplicates.
+        switch ($temp) { //Not very necessary, left for readability and a little security.
             case "activequiz" :
                 array_push($requestedtypes, $temp);
                 break;
@@ -196,8 +196,9 @@ foreach ($_GET as $querystringvariable => $value) {
 
 if (count($requestedtypes) < 1) {
     echo "<html style=\"background-color: #f4f4f4;\">";
-    echo "<div style=\"width: 200px;height: 100px;position:absolute;left:0; right:0;top:0; bottom:0;margin:auto;max-width:100%;max-height:100%;
-overflow:auto;background-color: white;border-radius: 25px;padding: 20px;border: 2px solid darkgray;text-align: center;\">";
+    echo "<div style=\"width: 200px;height: 100px;position:absolute;left:0; right:0;top:0;
+    	bottom:0;margin:auto;max-width:100%;max-height:100%;
+		overflow:auto;background-color: white;border-radius: 25px;padding: 20px;border: 2px solid darkgray;text-align: center;\">";
     echo "<h3>" . (get_string('no_types_requested', 'block_analytics_graphs')) . "</h3>";
     echo "</div>";
     echo "</html>";
@@ -211,8 +212,9 @@ $result = block_analytics_graphs_get_resource_url_access($course, $students, $re
 $numberofresources = count($result);
 if ($numberofresources == 0) {
     echo "<html style=\"background-color: #f4f4f4;\">";
-    echo "<div style=\"width: 200px;height: 100px;position:absolute;left:0; right:0;top:0; bottom:0;margin:auto;max-width:100%;max-height:100%;
-overflow:auto;background-color: white;border-radius: 25px;padding: 20px;border: 2px solid darkgray;text-align: center;\">";
+    echo "<div style=\"width: 200px;height: 100px;position:absolute;left:0; right:0;top:0;
+    	bottom:0;margin:auto;max-width:100%;max-height:100%;
+		overflow:auto;background-color: white;border-radius: 25px;padding: 20px;border: 2px solid darkgray;text-align: center;\">";
     echo "<h3>" . (get_string('no_graph', 'block_analytics_graphs')) . "</h3>";
     echo "</div>";
     echo "</html>";

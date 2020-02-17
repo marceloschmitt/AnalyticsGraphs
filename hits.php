@@ -73,7 +73,7 @@ if ($maxnumberofweeks) {
 }
 
 /* Get the number of modules accessed by week */
-$accessresults = block_analytics_graphs_get_number_of_modules_access_by_week($course, $students, $startdate, $legacy); // B
+$accessresults = block_analytics_graphs_get_number_of_modules_access_by_week($course, $students, $startdate, $legacy);
 $maxnumberofresources = 0;
 foreach ($accessresults as $tuple) {
     if ( $tuple->number > $maxnumberofresources) {
@@ -671,12 +671,12 @@ thead th {
             <?php    foreach ($groupmembers as $key => $value) { ?>
                 <option value="<?php echo $key; ?>"><?php echo $value["name"]; ?></option>
 <?php
-            }
+}
 ?>
             </select>
         </div>
 <?php
-    }
+}
 ?>
 <center>
 <H2><?php  echo   get_string('hits_distribution', 'block_analytics_graphs');?></H2>
@@ -716,7 +716,7 @@ thead th {
         });
                 var form ="<div class='div_nomes' id='studentswithnoaccess'>" +
                             createEmailForm(title , studentswithnoaccess, courseid, 'hits.php',
-                                <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' . 
+                                <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' .
                                 block_analytics_graphs_get_course_name($course)); ?>)+
                             "</div>";
                 document.write(form);
@@ -779,7 +779,7 @@ thead th {
 </ul>" +
                         "<div class='student_panel' id='email_panel-" + val.userid + "'>" +
                         createEmailForm(title,studentwithaccess, courseid, 'hits.php',
-                        <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' . 
+                        <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' .
                             block_analytics_graphs_get_course_name($course)); ?>) + "</div>" +
                         "<div class='student_panel' id='student_tab_panel-" + val.userid + "'></div>" + 
                     "</div>" + 
@@ -1761,7 +1761,8 @@ thead th {
                         var title = <?php echo json_encode(get_string('no_access', 'block_analytics_graphs'));?> + 
                             " - " + coursename;
                         $("#studentswithnoaccess").append(createEmailForm(title , studentswithnoaccessgroup, courseid, 'hits.php',
-                            <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' . block_analytics_graphs_get_course_name($course)); ?>));
+                            <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' .
+                            	block_analytics_graphs_get_course_name($course)); ?>));
                     }
                 }
             });

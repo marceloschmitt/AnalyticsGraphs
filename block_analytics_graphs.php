@@ -24,7 +24,7 @@ class block_analytics_graphs extends block_base {
         global $CFG;
         global $DB;
 
-        $uselegacypixurl = false; //... pix_url got deprecated in Moodle 3.3, leaving this just in case.
+        $uselegacypixurl = false; // ... pix_url got deprecated in Moodle 3.3, leaving this just in case.
 
         $course = $this->page->course;
         $context = context_course::instance($course->id);
@@ -53,7 +53,7 @@ class block_analytics_graphs extends block_base {
         $this->content->text .= "<li> <a href= {$CFG->wwwroot}/blocks/analytics_graphs/grades_chart.php?id={$course->id}
                           target=_blank>" . get_string('grades_chart', 'block_analytics_graphs') . "</a>";
         if ($uselegacypixurl) {
-            $this->content->text .= "<li> <a href= 
+            $this->content->text .= "<li> <a href=
             	{$CFG->wwwroot}/blocks/analytics_graphs/graphresourcestartuplegacy.php?id={$course->id}
                           target=_blank>" . get_string('access_to_contents', 'block_analytics_graphs') . "</a>";
         } else {

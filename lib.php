@@ -139,14 +139,12 @@ function block_analytics_graphs_get_resource_url_access($course, $estudantes, $r
     }
     list($insql, $inparams) = $DB->get_in_or_equal($inclause);
 
-    $requestedmodules = array($course); //... first parameter is courseid, later are modulesids to display
+    $requestedmodules = array($course); // ... first parameter is courseid, later are modulesids to display.
 
-    foreach ($requestedtypes as $module) { //... making params for the table
+    foreach ($requestedtypes as $module) { // ... making params for the table.
         $temp = $resource = $DB->get_record('modules', array('name' => $module), 'id');
         array_push($requestedmodules, $temp->id);
     }
-
-    // $startdate = $COURSE->startdate;
 
     /* Temp table to order */
     $params = array($course);
@@ -211,7 +209,7 @@ function block_analytics_graphs_get_resource_url_access($course, $estudantes, $r
                     ORDER BY tag.sequence";
 
     foreach ($requestedtypes as $type) {
-        switch ($type) { //... probably unnecessary, but here it is fine I think, at least for readability
+        switch ($type) { // Probably unnecessary, but here it is fine I think, at least for readability.
             case "activequiz" :
                 $sqla .= "avq.name as activequiz, ";
                 $sqld .= "LEFT JOIN {activequiz} avq ON cm.instance = avq.id
@@ -717,11 +715,6 @@ function block_analytics_graphs_get_user_resource_url_page_access($course, $stud
     global $DB;
 
     $requestedmodules = block_analytics_graphs_get_course_used_modules($course);
-
-    // $resource = $DB->get_record('modules', array('name' => 'resource'), 'id');
-    // $url = $DB->get_record('modules', array('name' => 'url'), 'id');
-    // $page = $DB->get_record('modules', array('name' => 'page'), 'id');
-    // $wiki = $DB->get_record('modules', array('name' => 'wiki'), 'id');
     $startdate = $COURSE->startdate;
 
     $paramsdefault = array($startdate, $student, $course);
@@ -984,10 +977,8 @@ function block_analytics_graphs_get_user_resource_url_page_access($course, $stud
         }
     }
 
-    // $params = "SETHERE";
     $sql = $sqla . $sqlb . $sqlc . $sqld . $sqle;
     $params = array_merge($paramsdefault, $paramsids);
-    // return $paramsdefault;
     $result = $DB->get_records_sql($sql, $paramsdefault);
     return($result);
 
@@ -1033,7 +1024,7 @@ function block_analytics_graphs_get_user_forum_state($course, $student) {
             WHERE a.course = " . $course ." AND c.userid = " . $student;
     $totaldiscpostsbyuser = $DB->get_records_sql($sql, $params);
 
-    $read = array(); // generating arrays
+    $read = array(); // Generating arrays.
     $notread = array();
     $posted = array();
     $notposted = array();
@@ -1072,7 +1063,7 @@ function block_analytics_graphs_get_user_forum_state($course, $student) {
         }
     }
 
-    $result = array(); // merging arrays
+    $result = array(); // Merging arrays,
 
     $i = 0;
     foreach ($read as $item) {
@@ -1160,7 +1151,7 @@ function block_analytics_graphs_get_user_quiz_state($course, $student) {
                 ORDER BY name";
     $resultstudentquizes = $DB->get_records_sql($sql, $params);
 
-    $passed = array(); // generating arrays
+    $passed = array(); // Generating arrays.
     $failed = array();
     $noaccess = array();
 
@@ -1182,7 +1173,7 @@ function block_analytics_graphs_get_user_quiz_state($course, $student) {
         }
     }
 
-    $result = array(); // merging arrays
+    $result = array(); // Merging arrays.
 
     $i = 0;
     foreach ($passed as $item) {
