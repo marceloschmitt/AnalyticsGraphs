@@ -484,7 +484,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
 
             echo "<h4 style='margin-bottom: 3px'>" . get_string('options', 'block_analytics_graphs') . ":</h4>";
 
-            echo get_string('startfrom', 'block_analytics_graphs') . ": <input type=\"date\" name=\"from\" 
+            echo get_string('startfrom', 'block_analytics_graphs') . ": <input type=\"date\" name=\"from\"
                 value=\"$startdate\"><br>";
 
             echo "<input type=\"checkbox\" name=\"hidden\" value=\"true\">" . get_string('displayhidden', 'block_analytics_graphs');
