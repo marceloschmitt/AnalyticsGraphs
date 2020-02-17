@@ -38,39 +38,39 @@ function block_analytics_graphs_get_course_group_members($course) {
     $groupmembers = array();
     $groups = groups_get_all_groups($course);
     foreach ($groups as $group) {
-        if (groups_group_visible($group->id, $DB->get_record('course', array('id' =>  $course), '*', MUST_EXIST))) {
-        	$members = groups_get_members($group->id);
-        	if (!empty($members)) {
-            	$groupmembers[$group->id]['name'] = $group->name;
-            	$numberofmembers = 0;
-            	foreach ($members as $member) {
-                	$groupmembers[$group->id]['members'][] = $member->id;
-                	$numberofmembers++;
-            	}
-            	$groupmembers[$group->id]['numberofmembers']  = $numberofmembers;
-        	}
-		}
+        if (groups_group_visible($group->id, $DB->get_record('course', array('id' => $course), '*', MUST_EXIST))) {
+            $members = groups_get_members($group->id);
+            if (!empty($members)) {
+                $groupmembers[$group->id]['name'] = $group->name;
+                $numberofmembers = 0;
+                foreach ($members as $member) {
+                    $groupmembers[$group->id]['members'][] = $member->id;
+                    $numberofmembers++;
+                }
+                $groupmembers[$group->id]['numberofmembers']  = $numberofmembers;
+            }
+        }
     }
     return($groupmembers);
 }
 
 function block_analytics_graphs_get_course_grouping_members($course) {
- 	global $DB;
- 	$groupingmembers = array();
+    global $DB;
+    $groupingmembers = array();
     $groupings = groups_get_all_groupings($course);
     foreach ($groupings as $grouping) {
-        if (groups_group_visible($group->id, $DB->get_record('course', array('id' =>  $course), '*', MUST_EXIST))) {
-        	$members = groups_get_grouping_members($grouping->id);
-        	if (!empty($members)) {
-            	$groupingmembers[$grouping->id]['name'] = $grouping->name;
-            	$numberofmembers = 0;
-            	foreach ($members as $member) {
-                	$groupingmembers[$grouping->id]['members'][] = $member->id;
-                	$numberofmembers++;
-            	}
-            	$groupingmembers[$grouping->id]['numberofmembers']  = $numberofmembers;
-        	}
-		}
+        if (groups_group_visible($group->id, $DB->get_record('course', array('id' => $course), '*', MUST_EXIST))) {
+            $members = groups_get_grouping_members($grouping->id);
+            if (!empty($members)) {
+                $groupingmembers[$grouping->id]['name'] = $grouping->name;
+                $numberofmembers = 0;
+                foreach ($members as $member) {
+                    $groupingmembers[$grouping->id]['members'][] = $member->id;
+                    $numberofmembers++;
+                }
+                $groupingmembers[$grouping->id]['numberofmembers']  = $numberofmembers;
+            }
+        }
     }
     return($groupingmembers);
 }
@@ -84,7 +84,7 @@ function block_analytics_graphs_get_students($course) {
                     'u.id, u.firstname, u.lastname, u.email, u.suspended', 'firstname, lastname');
     foreach ($allstudents as $student) {
         if ($student->suspended == 0) {
-            if (groups_user_groups_visible($DB->get_record('course', array('id' =>  $course), '*', MUST_EXIST), $student->id)) {
+            if (groups_user_groups_visible($DB->get_record('course', array('id' => $course), '*', MUST_EXIST), $student->id)) {
                 $students[] = $student;
             }
         }
@@ -139,14 +139,14 @@ function block_analytics_graphs_get_resource_url_access($course, $estudantes, $r
     }
     list($insql, $inparams) = $DB->get_in_or_equal($inclause);
 
-    $requestedmodules = array($course); // first parameter is courseid, later are modulesids to display
+    $requestedmodules = array($course); //... first parameter is courseid, later are modulesids to display
 
-    foreach ($requestedtypes as $module) { // making params for the table
+    foreach ($requestedtypes as $module) { //... making params for the table
         $temp = $resource = $DB->get_record('modules', array('name' => $module), 'id');
         array_push($requestedmodules, $temp->id);
     }
 
-	// $startdate = $COURSE->startdate;
+    // $startdate = $COURSE->startdate;
 
     /* Temp table to order */
     $params = array($course);
@@ -186,12 +186,12 @@ function block_analytics_graphs_get_resource_url_access($course, $estudantes, $r
                         LEFT JOIN {logstore_standard_log} log ON log.timecreated >= ?
                             AND log.userid $insql AND (action = 'viewed' OR action = 'submission') AND cm.id=log.contextinstanceid
                         WHERE cm.course = ?";
-	if ($hidden) {
-		$sqlb .= " AND (";
-	} else {
-		$sqlb .= " AND cm.visible=1 AND (";
-	}
-	
+    if ($hidden) {
+        $sqlb .= " AND (";
+    } else {
+        $sqlb .= " AND cm.visible=1 AND (";
+    }
+
     $sqlc = "cm.module=?";
 
     if (count($requestedmodules) >= 2) {
@@ -211,7 +211,7 @@ function block_analytics_graphs_get_resource_url_access($course, $estudantes, $r
                     ORDER BY tag.sequence";
 
     foreach ($requestedtypes as $type) {
-        switch ($type) { // probably unnecessary, but here it is fine I think, at least for readability
+        switch ($type) { //... probably unnecessary, but here it is fine I think, at least for readability
             case "activequiz" :
                 $sqla .= "avq.name as activequiz, ";
                 $sqld .= "LEFT JOIN {activequiz} avq ON cm.instance = avq.id
@@ -318,8 +318,8 @@ function block_analytics_graphs_get_resource_url_access($course, $estudantes, $r
         ";
                 break;
             case "turnitintooltwo" :
-                $sqla.= "tii.name as turnitintooltwo, ";
-                $sqld.= "LEFT JOIN {turnitintooltwo} tii ON cm.instance = tii.id
+                $sqla .= "tii.name as turnitintooltwo, ";
+                $sqld .= "LEFT JOIN {turnitintooltwo} tii ON cm.instance = tii.id
         ";
                     break;
             case "hvp" :
@@ -509,12 +509,12 @@ function block_analytics_graphs_get_turnitin_submission($course, $students) {
                 SELECT t.id, ts.userid, MAX(tp.dtdue) as timecreated
                 FROM {turnitintooltwo} t
                 LEFT JOIN {turnitintooltwo_submissions} ts on t.id = ts.turnitintooltwoid
-		LEFT JOIN {turnitintooltwo_parts} tp on t.id = tp.turnitintooltwoid
+        LEFT JOIN {turnitintooltwo_parts} tp on t.id = tp.turnitintooltwoid
                 WHERE t.course = ? AND (ts.userid IS NULL OR ts.userid $insql)
                 GROUP BY t.id, ts.userid
             ) temp
             LEFT JOIN {turnitintooltwo} t on t.id = temp.id
-	    LEFT JOIN {turnitintooltwo_parts} tp on t.id = tp.turnitintooltwoid
+        LEFT JOIN {turnitintooltwo_parts} tp on t.id = tp.turnitintooltwoid
             LEFT JOIN {user} usr on usr.id = temp.userid
             ORDER BY duedate, name, firstname";
 
@@ -882,8 +882,8 @@ function block_analytics_graphs_get_user_resource_url_page_access($course, $stud
             ";
                 break;
             case "turnitintooltwo" :
-                $sqla.= "tii.name as turnitintooltwo, ";
-                $sqld.= "LEFT JOIN {turnitintooltwo} tii ON cm.instance = tii.id
+                $sqla .= "tii.name as turnitintooltwo, ";
+                $sqld .= "LEFT JOIN {turnitintooltwo} tii ON cm.instance = tii.id
             ";
                 break;
             case "quiz" :
@@ -1260,7 +1260,7 @@ function block_analytics_graphs_extend_navigation_course($navigation, $course, $
             $reportanalyticsgraphs->add(get_string('submissions_hotpot', 'block_analytics_graphs'), $url,
                 navigation_node::TYPE_SETTING, null, null, new pix_icon('i/report', ''));
         }
-        
+
         if (in_array("turnitintooltwo", $availablemodules)) {
             $url = new moodle_url($CFG->wwwroot.'/blocks/analytics_graphs/turnitin.php', array('id' => $course->id));
             $reportanalyticsgraphs->add(get_string('submissions_turnitin', 'block_analytics_graphs'), $url,

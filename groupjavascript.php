@@ -172,7 +172,7 @@ foreach ($groupmembers as $key => $value) {
             </select>
         </div>
 <?php
-}
+        }
 ?>
         <div id="container" style="min-width: 310px; min-width: 800px; height: 650px; margin: 0 auto"></div>
         <script>

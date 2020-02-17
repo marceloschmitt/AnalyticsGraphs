@@ -18,7 +18,7 @@ require('lib.php');
 require('javascriptfunctions.php');
 $course = htmlspecialchars(required_param('id', PARAM_INT));
 $startdate = optional_param('from', '***', PARAM_TEXT);
-$hidden =  optional_param('hidden', false, PARAM_TEXT);
+$hidden = optional_param('hidden', false, PARAM_TEXT);
 global $DB;
 /* Access control */
 require_login($course);
@@ -26,7 +26,7 @@ $context = context_course::instance($course);
 require_capability('block/analytics_graphs:viewpages', $context);
 $courseparams = get_course($course);
 if ($startdate === '***') {
-$startdate = $courseparams->startdate;
+	$startdate = $courseparams->startdate;
 } else {
 	$datetoarray = explode('-', $startdate);
 	$starttime = new DateTime("now", core_date::get_server_timezone_object());
@@ -471,7 +471,7 @@ if ($numberofaccesses == 0) {
 /* Discover groups/groupings and members */
 $groupmembers = block_analytics_graphs_get_course_group_members($course);
 $groupingmembers = block_analytics_graphs_get_course_grouping_members($course);
-$groupmembers = array_merge($groupmembers,$groupingmembers);
+$groupmembers = array_merge($groupmembers, $groupingmembers);
 $groupmembersjson = json_encode($groupmembers);
 $statistics = json_encode($statistics);
 /* Log */
@@ -721,7 +721,7 @@ foreach ($groupmembers as $key => $value) {
             </select>
         </div>
 <?php
-}
+		}
 ?>
         <div id="container" style="min-width: 800px; height:<?php echo ($counter + 1) * 50 + 180;?>; margin: 0 auto"></div>
         <script>
