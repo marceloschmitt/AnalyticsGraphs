@@ -26,13 +26,13 @@ $context = context_course::instance($course);
 require_capability('block/analytics_graphs:viewpages', $context);
 $courseparams = get_course($course);
 if ($startdate === '***') {
-	$startdate = $courseparams->startdate;
+    $startdate = $courseparams->startdate;
 } else {
-	$datetoarray = explode('-', $startdate);
-	$starttime = new DateTime("now", core_date::get_server_timezone_object());
-	$starttime->setDate((int)$datetoarray[0], (int)$datetoarray[1], (int)$datetoarray[2]);
-	$starttime->setTime(0, 0, 0);
-	$startdate = $starttime->getTimestamp();
+    $datetoarray = explode('-', $startdate);
+    $starttime = new DateTime("now", core_date::get_server_timezone_object());
+    $starttime->setDate((int)$datetoarray[0], (int)$datetoarray[1], (int)$datetoarray[2]);
+    $starttime->setTime(0, 0, 0);
+    $startdate = $starttime->getTimestamp();
 }
 $coursename = get_string('course', 'block_analytics_graphs') . ": " . $courseparams->fullname;
 $students = block_analytics_graphs_get_students($course);
@@ -721,7 +721,7 @@ foreach ($groupmembers as $key => $value) {
             </select>
         </div>
 <?php
-		}
+        }
 ?>
         <div id="container" style="min-width: 800px; height:<?php echo ($counter + 1) * 50 + 180;?>; margin: 0 auto"></div>
         <script>

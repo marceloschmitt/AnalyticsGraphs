@@ -289,14 +289,14 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                     get_string('typename_url', 'block_analytics_graphs'));
                 $num++;
             }
-			
-			echo "<input type=\"hidden\" name=\"id\" value=\"$course\">";
-			
-			echo "<h4 style='margin-bottom: 3px'>Options:</h4>";
-			
-			echo "Start from: <input type=\"date\" name=\"from\" value=\"$startdate\"><br>";
-			 
-			echo "<input type=\"checkbox\" name=\"hidden\" value=\"true\"> Display hidden items";
+            
+            echo "<input type=\"hidden\" name=\"id\" value=\"$course\">";
+            
+            echo "<h4 style='margin-bottom: 3px'>Options:</h4>";
+            
+            echo "Start from: <input type=\"date\" name=\"from\" value=\"$startdate\"><br>";
+             
+            echo "<input type=\"checkbox\" name=\"hidden\" value=\"true\"> Display hidden items";
             ?>
     </div>
     <?php

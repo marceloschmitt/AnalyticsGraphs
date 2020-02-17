@@ -780,7 +780,7 @@ thead th {
                         "<div class='student_panel' id='email_panel-" + val.userid + "'>" +
                         createEmailForm(title,studentwithaccess, courseid, 'hits.php',
                         <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' . 
-                        	block_analytics_graphs_get_course_name($course)); ?>) + "</div>" +
+                            block_analytics_graphs_get_course_name($course)); ?>) + "</div>" +
                         "<div class='student_panel' id='student_tab_panel-" + val.userid + "'></div>" + 
                     "</div>" + 
                 "</div>";
@@ -1737,7 +1737,7 @@ thead th {
                 var title = <?php echo json_encode(get_string('no_access', 'block_analytics_graphs'));?> + " - " + coursename;
                 $("#studentswithnoaccess").append(createEmailForm(title , studentswithnoaccessgroup, courseid, 'hits.php',
                     <?php echo json_encode(get_string('info_coursetype', 'block_analytics_graphs') . ': ' . 
-                    	block_analytics_graphs_get_course_name($course)); ?>));
+                        block_analytics_graphs_get_course_name($course)); ?>));
             }
         }else{
             $.each(groups, function(index, value){
