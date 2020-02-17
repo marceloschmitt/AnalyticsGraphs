@@ -718,7 +718,6 @@ function block_analytics_graphs_get_user_resource_url_page_access($course, $stud
     $startdate = $COURSE->startdate;
 
     $paramsdefault = array($startdate, $student, $course);
-    // array($startdate, $student, $course, $resource->id, $url->id, $page->id, $wiki->id);
     $paramsids = array();
     $sqla = "SELECT temp.id, m.name as tipo, ";
     $sqlb = "COALESCE(temp.userid,0) as userid,  temp.acessos
@@ -1063,7 +1062,7 @@ function block_analytics_graphs_get_user_forum_state($course, $student) {
         }
     }
 
-    $result = array(); // Merging arrays,
+    $result = array(); // Merging arrays.
 
     $i = 0;
     foreach ($read as $item) {
