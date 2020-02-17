@@ -223,7 +223,7 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                 $num++;
             }
             if (in_array("glossary", $availablemodules)) {
-                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_glossary",  
+                echo block_analytics_graphs_generate_graph_startup_module_entry($OUTPUT->pix_icon("icon", "mod_glossary",
                     "mod_glossary", array(
                     'width' => 24,
                     'height' => 24,
@@ -484,14 +484,14 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
 
             echo "<h4 style='margin-bottom: 3px'>" . get_string('options', 'block_analytics_graphs') . ":</h4>";
 
-            echo get_string('startfrom', 'block_analytics_graphs') . ": <input type=\"date\" name=\"from\"
+            echo get_string('startfrom', 'block_analytics_graphs') . ": <input type=\"date\" name=\"from\" 
                 value=\"$startdate\"><br>";
 
             echo "<input type=\"checkbox\" name=\"hidden\" value=\"true\">" . get_string('displayhidden', 'block_analytics_graphs');
             ?>
     </div>
     <?php
-    echo "<input type='button' value='" . get_string('btn_select_all', 'block_analytics_graphs') . "' 
+    echo "<input type='button' value='" . get_string('btn_select_all', 'block_analytics_graphs') . "'
         onclick='checkUncheck(true);'>";
     echo "<input type='button' value='" . get_string('btn_deselect_all', 'block_analytics_graphs') . "'
         onclick='checkUncheck(false);'>";

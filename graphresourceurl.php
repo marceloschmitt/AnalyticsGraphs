@@ -197,22 +197,22 @@ foreach ($_GET as $querystringvariable => $value) {
 if (count($requestedtypes) < 1) {
     echo "<html style=\"background-color: #f4f4f4;\">";
     echo "<div style=\"width: 200px;height: 100px;position:absolute;left:0; right:0;top:0;
-    	bottom:0;margin:auto;max-width:100%;max-height:100%;
-		overflow:auto;background-color: white;border-radius: 25px;padding: 20px;border: 2px solid darkgray;text-align: center;\">";
+        bottom:0;margin:auto;max-width:100%;max-height:100%;
+        overflow:auto;background-color: white;border-radius: 25px;padding: 20px;border: 2px solid darkgray;text-align: center;\">";
     echo "<h3>" . (get_string('no_types_requested', 'block_analytics_graphs')) . "</h3>";
     echo "</div>";
     echo "</html>";
     exit;
 }
 
-$result = block_analytics_graphs_get_resource_url_access($course, $students, $requestedtypes, $startdate, $hidden);	
+$result = block_analytics_graphs_get_resource_url_access($course, $students, $requestedtypes, $startdate, $hidden); 
 
 $numberofresources = count($result);
 if ($numberofresources == 0) {
     echo "<html style=\"background-color: #f4f4f4;\">";
     echo "<div style=\"width: 200px;height: 100px;position:absolute;left:0; right:0;top:0;
-    	bottom:0;margin:auto;max-width:100%;max-height:100%;
-		overflow:auto;background-color: white;border-radius: 25px;padding: 20px;border: 2px solid darkgray;text-align: center;\">";
+        bottom:0;margin:auto;max-width:100%;max-height:100%;
+        overflow:auto;background-color: white;border-radius: 25px;padding: 20px;border: 2px solid darkgray;text-align: center;\">";
     echo "<h3>" . (get_string('no_graph', 'block_analytics_graphs')) . "</h3>";
     echo "</div>";
     echo "</html>";

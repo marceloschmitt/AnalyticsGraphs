@@ -66,21 +66,21 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
             $num = 1;
             echo "<h4 style='margin-bottom: 3px'>Activities:</h4>";
             if (in_array("activequiz", $availableModules)) { 
-            /* From here used to check if specific module is available, otherwise it is not displayed. */
+                /* From here used to check if specific module is available, otherwise it is not displayed. */
                 echo block_analytics_graphs_generate_graph_startup_module_entry($legacypixurlbefore . $OUTPUT->pix_url('icon',
                     'mod_activequiz') . $legacypixurlafter, "mod" . $num, "activequiz",
                     get_string('typename_activequiz', 'block_analytics_graphs'));
                 $num++;
             }
             if (in_array("assign", $availableModules)) {
-            /* From here used to check if specific module is available, otherwise it is not displayed. */
+                /* From here used to check if specific module is available, otherwise it is not displayed. */
                 echo block_analytics_graphs_generate_graph_startup_module_entry($legacypixurlbefore . $OUTPUT->pix_url('icon',
                     'mod_assign') . $legacypixurlafter, "mod" . $num, "assign",
                     get_string('typename_assign', 'block_analytics_graphs'));
                 $num++;
             }
             if (in_array("attendance", $availableModules)) { 
-            /* From here used to check if specific module is available, otherwise it is not displayed. */
+                /* From here used to check if specific module is available, otherwise it is not displayed. */
                 echo block_analytics_graphs_generate_graph_startup_module_entry($legacypixurlbefore . $OUTPUT->pix_url('icon',
                     'mod_attendance') . $legacypixurlafter, "mod" . $num, "attendance",
                     get_string('typename_attendance', 'block_analytics_graphs'));
@@ -92,7 +92,8 @@ overflow:auto;background-color: white;border-radius: 0px;padding: 20px;border: 2
                     get_string('typename_bigbluebuttonbn', 'block_analytics_graphs'));
                 $num++;
             }
-            if (in_array("booking", $availableModules)) { //from here used to check if specific module is available, otherwise it is not displayed
+            if (in_array("booking", $availableModules)) { 
+                /* From here used to check if specific module is available, otherwise it is not displayed. */
                 echo block_analytics_graphs_generate_graph_startup_module_entry($legacypixurlbefore . $OUTPUT->pix_url('icon',
                     'mod_booking') . $legacypixurlafter, "mod" . $num, "booking",
                     get_string('typename_booking', 'block_analytics_graphs'));
