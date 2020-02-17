@@ -14,8 +14,8 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-require('../../../config.php');
 namespace block_analytics_graphs\privacy;
+defined('MOODLE_INTERNAL') || die();
 
 class provider implements
     // This plugin does not store any personal user data.
